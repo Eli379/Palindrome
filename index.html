@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <!-- Add Tailwind CSS styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-8">
+        <h1 class="text-3xl font-bold mb-4">Palindrome Checker</h1>
+        <form id="palindromeForm" class="flex">
+            <input
+                type="text"
+                id="inputPalindrome"
+                class="rounded-l-lg p-4 flex-1 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white"
+                placeholder="Enter a string"
+            >
+            <button type="submit" class="px-8 rounded-r-lg bg-blue-500 text-white font-bold p-4 uppercase border-blue-500 border-t border-b border-r">Check</button>
+        </form>
+        <p id="result" class="mt-4 font-bold text-xl"></p>
+
+        <div class="mt-8">
+            <p class="text-lg font-bold"><em>Unit and Mock Testing</em></p>
+            <p><em>
+                This Palindrome Checker includes custom unit and mock tests in the browser environment.
+                To view the full code and test implementations, check out the GitHub repository:
+                <a href="https://github.com/Eli379/Palindrome" target="_blank" class="text-blue-500 underline">https://github.com/Eli379/Palindrome</a>
+            </em></p>
+        </div>
+    </div>
+
+    <script>
+        // Palindrome Function
+        function palindrome(str) {
+            // Regular expression to remove non-alphanumeric characters and underscores
+            var regex = /[\W_]/g;
+          
+            // Convert the string to lowercase and remove non-alphanumeric characters
+            str = str.toLowerCase().replace(regex, "").replace(/\s/g, "");
+          
+            // Reverse the string
+            var reversed = str.split("").reverse().join("");
+          
+            // Check if the reversed string is equal to the original string
+            return reversed === str;
+        }
+        
+        // Function to handle form submission
+        document.getElementById('palindromeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+        
+            // Get the input value
+            var input = document.getElementById('inputPalindrome').value;
+        
+            // Check if the input is a palindrome
+            var isPalindrome = palindrome(input);
+        
+            // Display the result
+            var resultElement = document.getElementById('result');
+            resultElement.textContent = isPalindrome ? "'" + input + "' is a palindrome!" : "'" + input + "' is not a palindrome!";
+        });
+    </script>
+</body>
+</html>
