@@ -14,7 +14,7 @@ function palindrome(str) {
     var regex = /[\W_]/g;
   
     // Convert the string to lowercase and remove non-alphanumeric characters
-    str = str.toLowerCase().replace(regex, "");
+    str = str.toLowerCase().replace(regex, "").replace(/\s/g, "");
   
     // Reverse the string
     var reversed = str.split("").reverse().join("");
@@ -25,3 +25,5 @@ function palindrome(str) {
   
   // Example usage
   console.log(palindrome("eye")); // Output: true
+
+  module.exports = palindrome;
