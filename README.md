@@ -1,6 +1,7 @@
 # Palindrome
 Takes in an input and determines if it is a palindrome or not.
 Utilises Jest for Unit and Mock testing.
+<em>if you don't want to download see it here: https://eli379.github.io/Palindrome</em>.
 
 # My approach
 I utilised JavaScript's built in functions to:
