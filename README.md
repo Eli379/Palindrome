@@ -11,6 +11,12 @@ I utilised JavaScript's built in functions to:
 3. Turned it back into a string that is a reversed version of the input
 4. If reversed string == input, it is a palindrome
 
+# Testing
+To run Jest testing and see results:
+1. Clone the repo
+2. Install the modules (npm install etc.)
+3. Enter 'npm run test' in the terminal
+
 # Regex
 Used regex to remove non-alphanumeric characters and underscores the moment the input is received
 
